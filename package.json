@@ -1,0 +1,31 @@
+{
+    "name": "express-cocained-geobase",
+    "version": "1.0.0",
+    "description": "Geobase cocaine servce middleware for express",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.yandex-team.ru/export/express-cocained-geobase.git"
+    },
+    "keywords": [
+        "express",
+        "plugin",
+        "middleware",
+        "geobase"
+    ],
+    "author": "Vsevolod Strukchinsky <floatdrop@yandex-team.ru>",
+    "license": "MIT",
+
+    "devDependencies": {
+        "express": "~3.0",
+        "istanbul": "~0.1.21",
+        "mocha": "1.10.x",
+        "mocha-istanbul": "*",
+        "supertest": "*",
+        "chai": "*"
+    },
+
+    "scripts": {
+        "test": "make test"
+    }
+}
