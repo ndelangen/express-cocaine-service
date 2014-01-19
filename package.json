@@ -1,32 +1,31 @@
 {
-    "name": "express-cocained-service",
-    "version": "1.0.0",
-    "description": "Cocained service middleware wrapper for express",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.yandex-team.ru/export/express-cocained-service.git"
-    },
-    "keywords": [
-        "express",
-        "plugin",
-        "middleware"
-    ],
-    "author": "Vsevolod Strukchinsky <floatdrop@yandex-team.ru>",
-    "license": "MIT",
-    "dependencies": {
-        "cocaine": "*"
-    },
-    "devDependencies": {
-        "express": "~3.0",
-        "istanbul": "~0.1.21",
-        "mocha": "1.10.x",
-        "mocha-istanbul": "*",
-        "supertest": "*",
-        "chai": "*"
-    },
-
-    "scripts": {
-        "test": "make test"
-    }
+  "name": "express-cocained-service",
+  "version": "1.0.1",
+  "description": "Cocained service middleware wrapper for express",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.yandex-team.ru/export/express-cocained-service.git"
+  },
+  "keywords": [
+    "express",
+    "plugin",
+    "middleware"
+  ],
+  "author": "Vsevolod Strukchinsky <floatdrop@yandex-team.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "cocaine": "*"
+  },
+  "devDependencies": {
+    "express": "~3.0",
+    "istanbul": "~0.1.21",
+    "mocha": "1.10.x",
+    "mocha-istanbul": "*",
+    "supertest": "*",
+    "chai": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  }
 }
