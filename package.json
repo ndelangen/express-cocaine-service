@@ -1,6 +1,6 @@
 {
   "name": "express-cocained-service",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Cocained service middleware wrapper for express",
   "main": "index.js",
   "repository": {
