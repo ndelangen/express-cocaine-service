@@ -1,6 +1,6 @@
 {
   "name": "express-cocaine-service",
-  "version": "1.0.7",
+  "version": "0.0.0",
   "description": "Cocained service middleware wrapper for express",
   "main": "index.js",
   "repository": {
@@ -24,6 +24,6 @@
     "mocha-istanbul": "*"
   },
   "scripts": {
-    "test": "istanbul test _mocha --report html -- test/*.js -R spec",
+    "test": "istanbul test _mocha --report html -- test/*.js -R spec"
   }
 }
