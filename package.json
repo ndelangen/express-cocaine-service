@@ -1,11 +1,11 @@
 {
-  "name": "express-cocained-service",
+  "name": "express-cocaine-service",
   "version": "1.0.7",
   "description": "Cocained service middleware wrapper for express",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.yandex-team.ru/export/express-cocained-service.git"
+    "url": "git://github.yandex-team.ru/floatdrop/express-cocaine-service.git"
   },
   "keywords": [
     "express",
@@ -15,17 +15,15 @@
   "author": "Vsevolod Strukchinsky <floatdrop@yandex-team.ru>",
   "license": "MIT",
   "dependencies": {
-    "cocaine": "git+https://github.com/cocaine/cocaine-framework-nodejs.git"
+    "cocaine": "~0.3",
+    "connect-once": "0.0.x"
   },
   "devDependencies": {
-    "express": "~3.0",
-    "istanbul": "~0.1.21",
-    "mocha": "1.10.x",
-    "mocha-istanbul": "*",
-    "supertest": "*",
-    "chai": "*"
+    "istanbul": "*",
+    "mocha": "*",
+    "mocha-istanbul": "*"
   },
   "scripts": {
-    "test": "make test"
+    "test": "istanbul test _mocha --report html -- test/*.js -R spec",
   }
 }
