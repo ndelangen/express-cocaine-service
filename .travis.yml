@@ -2,5 +2,8 @@ language: node_js
 node_js:
   - '0.8'
   - '0.10'
+before_script:
+  - curl -LO http://dist.yandex.ru/yandex-lucid/unstable/amd64/libcocaine-dev_0.11.2.1_amd64.deb 
+  - sudo dpkg -i libcocaine-dev_0.11.2.1_amd64.deb 
 script:
   - npm run coveralls
