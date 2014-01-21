@@ -38,8 +38,8 @@ See [connect-once options](https://github.com/floatdrop/connect-once).
 [travis-url]: http://travis-ci.org/floatdrop/express-cocaine-service
 [travis-image]: https://travis-ci.org/floatdrop/express-cocaine-service.png?branch=master
 
-[coveralls-url]: https://coveralls.io/r/floatdrop/connect-once
-[coveralls-image]: https://coveralls.io/repos/floatdrop/connect-once/badge.png
+[coveralls-url]: https://coveralls.io/r/floatdrop/express-cocaine-service
+[coveralls-image]: https://coveralls.io/repos/floatdrop/express-cocaine-service/badge.png
 
 [depstat-url]: https://david-dm.org/floatdrop/express-cocaine-service
 [depstat-image]: https://david-dm.org/floatdrop/express-cocaine-service.png?theme=shields.io
