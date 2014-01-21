@@ -8,14 +8,14 @@ var cli = new cocaine.Client(argv.locator);
 
 var connectOnce = require('connect-once');
 
-module.exports = function (services, options) {
-    options = options || {};
+module.exports = function () {
+    var args = Array.prototype.slice.apply(arguments);
 
-    if (typeof services === 'string') {
-        services = [ services ];
-    }
+    var options = {};
+    if (typeof args[0] === 'object') { options = args.shift(); }
 
-    var modules = connectOnce(cli.getServices, services);
+    var services = args,
+        modules = connectOnce(options, cli.getServices, services);
 
     return function expressCocainedService(req, res, next) {
         modules.when('available', function () {
@@ -25,6 +25,8 @@ module.exports = function (services, options) {
             for (var i = 0; i < services.length; i++) {
                 req[services[i]] = arguments[i + 1];
             }
+
+            next();
         });
     };
 };
