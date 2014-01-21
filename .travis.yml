@@ -3,7 +3,7 @@ node_js:
   - '0.8'
   - '0.10'
 before_install:
-  - echo 'deb http://repo.reverbrain.com/packages/ubuntu /' >> /etc/apt/sources.list.d/reverbrain.sources.list
+  - sudo echo 'deb http://repo.reverbrain.com/packages/ubuntu /' >> /etc/apt/sources.list.d/reverbrain.sources.list
   - sudo apt-get --yes --force-yes update
   - sudo apt-get --yes --force-yes install libcocaine-dev
 script:
