@@ -15,7 +15,7 @@ This module will work only in cocained express applicaion
 ```js
 var app = express();
 
-app.use(require('express-cocained-service')('geobase', 'uatraits'));
+app.use(require('express-cocaine-service')('geobase', 'uatraits'));
 
 app.get('/', function (req, res) {
 	// Use req.service.geobase and req.service.uatraits
