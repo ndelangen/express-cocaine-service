@@ -21,9 +21,10 @@ module.exports = function () {
         modules.when('available', function () {
             var args = Array.prototype.slice.apply(arguments);
             if (args[0]) { return next(args[0]); }
-
-            for (var i = 0; i < services.length; i++) {
-                req[services[i]] = arguments[i + 1];
+            
+            req.services = req.services || {};
+            for (var i = 0, l = services.length; i < l; i++) {
+                req.services[services[i]] = arguments[i + 1];
             }
 
             next();
