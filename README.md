@@ -18,7 +18,7 @@ var app = express();
 app.use(require('express-cocained-service')('geobase', 'uatraits'));
 
 app.get('/', function (req, res) {
-	// Use req.geobase and req.uatraits
+	// Use req.service.geobase and req.service.uatraits
 });
 ```
 
