@@ -15,7 +15,7 @@ module.exports = function () {
     if (typeof args[0] === 'object') { options = args.shift(); }
 
     var services = args,
-        modules = connectOnce(options, cli.getServices, services);
+        modules = new connectOnce(options, cli.getServices, services);
 
     return function expressCocainedService(req, res, next) {
         modules.when('available', function () {
