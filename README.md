@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 
 ## API
 
-### express-cocained-service([options,] service, service, ...)
+### express-cocaine-service([options,] service, service, ...)
 
 Request services from cocaine and store put links to them at every request.
 
