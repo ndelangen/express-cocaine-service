@@ -3,7 +3,7 @@ node_js:
   - '0.8'
   - '0.10'
 before_install:
-  - curl http://repo.reverbrain.com/REVERBRAIN.GPG | apt-key add -
+  - echo 'deb http://repo.reverbrain.com/precise current/amd64/' | sudo tee -a /etc/apt/sources.list 
   - sudo apt-get update -qq
   - sudo apt-get install libcocaine-dev --force-yes
 script:
