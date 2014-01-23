@@ -15,7 +15,17 @@ This module will work only in cocained express applicaion
 ```js
 var app = express();
 
-app.use(require('express-cocaine-service')('geobase', 'uatraits'));
+// with default client
+// new cocaine.Client(argv.locator)
+app.use(require('express-cocained-service')('geobase', 'uatraits'));
+
+// or with custom client
+var Vow = require("vow");
+var promises = require("cocaine/lib/client/methods/promises_shim").Vow(Vow);
+var methods = require("cocaine/lib/client/methods/promises")(promises);
+var cocaine = require("cocaine");
+var client = new cocaine.Client(['apefront.tst.ape.yandex.net', 10053], methods)
+app.use(require('express-cocained-service')({ client: client }, 'geobase', 'uatraits'));
 
 app.get('/', function (req, res) {
 	// Use req.service.geobase and req.service.uatraits
@@ -30,7 +40,11 @@ Request services from cocaine and store put links to them at every request.
 
 ## Options
 
+```[options.client]``` — predefined custom cocaine client
+
 See [connect-once options](https://github.com/floatdrop/connect-once).
+
+[npm-url]: https://npmjs.org/package/express-cocaine-service
 
 [npm-url]: https://npmjs.org/package/express-cocaine-service
 [npm-image]: https://badge.fury.io/js/express-cocaine-service.png
