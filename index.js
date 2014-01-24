@@ -10,7 +10,7 @@ var connectOnce = require('connect-once');
 var slice = [].slice;
 
 module.exports = function () {
-    var args = Array.prototype.slice.apply(arguments);
+    var args = slice.apply(arguments);
 
     var options = {};
     if (typeof args[0] === 'object') { options = args.shift(); }
