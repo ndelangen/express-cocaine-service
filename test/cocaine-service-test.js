@@ -13,7 +13,7 @@ describe('express-cocaine-service', function () {
 
     it('should request services before request', function (done) {
         var client = { getServices: function (services, cb) {
-            setTimeout(cb.apply, 1000, cb, [null].concat(services));
+            setTimeout(cb.apply.bind(cb), 1000, cb, [null].concat(services));
         }};
 
         var mw = ces({ client: client }, 'one');
@@ -36,9 +36,9 @@ describe('express-cocaine-service', function () {
         mw(this.req, {}, function () {
             should.exist(this.req.services);
             should.exist(this.req.services.one);
-            this.req.services.one.equals('one');
+            this.req.services.one.equal('one');
             should.exist(this.req.services.two);
-            this.req.services.two.equals('two');
+            this.req.services.two.equal('two');
             done();
         }.bind(this));
     });
