@@ -21,7 +21,8 @@
   "devDependencies": {
     "istanbul": "*",
     "mocha": "*",
-    "mocha-istanbul": "*"
+    "mocha-istanbul": "*",
+    "should": "~3.1.0"
   },
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js -R spec"
