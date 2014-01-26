@@ -20,14 +20,13 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "istanbul": "*",
-    "mocha-istanbul": "*",
-    "coveralls": "*",
     "mocha-lcov-reporter": "*",
+    "coveralls": "*",
+    "istanbul": "*",
     "should": "~3.1.0"
   },
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js -R spec",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- test/*-test.js test/*-tests.js -R spec -t 5000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   }
 }
