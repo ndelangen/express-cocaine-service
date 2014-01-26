@@ -16,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "cocaine": "~0.3",
-    "connect-once": "0.0.x"
+    "connect-once": "0.0.x",
+    "optimist": "~0.6.0"
   },
   "devDependencies": {
     "mocha": "*",
