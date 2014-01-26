@@ -2,9 +2,6 @@
 
 'use strict';
 
-var argv = require('optimist').argv;
-var cocaine = require('cocaine');
-
 var connectOnce = require('connect-once');
 
 var slice = [].slice;
@@ -15,7 +12,7 @@ module.exports = function () {
     var options = {};
     if (typeof args[0] === 'object') { options = args.shift(); }
 
-    options.client = options.client || new cocaine.Client(argv.locator);
+    options.client = options.client || new (require('cocaine')).Client(require('optimist').argv.locator);
 
     var services = args,
         modules = new connectOnce(options, options.client.getServices.bind(options.client), services);

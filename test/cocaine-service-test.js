@@ -7,23 +7,21 @@ var ces = require('..'),
     should = require('should');
 
 describe('express-cocaine-service', function () {
-    beforeEach(function () {
-        this.req = {};
-    });
-
     it('should request services before request', function (done) {
         var client = { getServices: function (services, cb) {
-            setTimeout(cb.apply.bind(cb), 1000, cb, [null].concat(services));
+            setTimeout(function () {
+                cb.apply(cb, [null].concat(services));
+            }, 1000);
         }};
 
         var mw = ces({ client: client }, 'one');
         setTimeout(function () {
             var requestTime = (new Date()).getTime();
-            mw(this.req, {}, function () {
+            mw({}, {}, function () {
                 var responseTime = (new Date()).getTime();
                 (responseTime - requestTime).should.be.below(400);
                 done();
-            }.bind(this));
+            });
         }, 700);
     });
 
@@ -33,13 +31,14 @@ describe('express-cocaine-service', function () {
         }};
 
         var mw = ces({ client: client }, 'one', 'two');
-        mw(this.req, {}, function () {
-            should.exist(this.req.services);
-            should.exist(this.req.services.one);
-            this.req.services.one.equal('one');
-            should.exist(this.req.services.two);
-            this.req.services.two.equal('two');
+        var req = {};
+        mw(req, {}, function () {
+            should.exist(req.services);
+            should.exist(req.services.one);
+            should.equal(req.services.one, 'one');
+            should.exist(req.services.two);
+            should.equal(req.services.two, 'two');
             done();
-        }.bind(this));
+        });
     });
 });
