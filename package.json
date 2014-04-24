@@ -1,6 +1,6 @@
 {
   "name": "express-cocaine-service",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Cocained service middleware wrapper for express",
   "main": "index.js",
   "repository": {
