@@ -4,7 +4,7 @@
 
 ## Cocaine
 
-This module will work only in cocained express applicaion
+This module will work only in cocained express application
 
 ## Install
 
